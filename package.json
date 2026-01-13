@@ -1,0 +1,28 @@
+{
+  "name": "podlink-cf-worker",
+  "version": "1.0.0",
+  "description": "Cloudflare Worker for generating Podlink URLs from podcast show and episode names",
+  "main": "src/index.ts",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "tail": "wrangler tail",
+    "test": "wrangler dev --test"
+  },
+  "keywords": [
+    "cloudflare",
+    "worker",
+    "podcast",
+    "podlink"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "fast-xml-parser": "^4.3.4"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20240529.0",
+    "typescript": "^5.3.3",
+    "wrangler": "^4.58.0"
+  }
+}

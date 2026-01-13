@@ -1,0 +1,11 @@
+name = "podlink-cf-worker"
+main = "src/index.ts"
+compatibility_date = "2024-01-01"
+
+# Custom domain binding
+routes = [
+  { pattern = "podlink.meandmybadself.com/*", zone_name = "meandmybadself.com" }
+]
+
+# Workers Paid: CPU limits are 50ms for free, 50ms-30s for paid
+# limits = { cpu_ms = 50 }
