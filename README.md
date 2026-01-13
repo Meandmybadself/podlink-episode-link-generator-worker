@@ -91,4 +91,4 @@ curl -X POST https://podlink.meandmybadself.com \
 
 ## License
 
-ISC
+MIT

@@ -96,7 +96,12 @@ async function searchApplePodcasts(
   searchUrl.searchParams.set("entity", "podcast");
   searchUrl.searchParams.set("limit", "10");
 
-  const response = await fetch(searchUrl.toString());
+  const response = await fetch(searchUrl.toString(), {
+    headers: {
+      "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+      "Accept": "application/json",
+    },
+  });
 
   if (!response.ok) {
     throw new Error(`Apple Search API error: ${response.status}`);
@@ -131,7 +136,12 @@ async function searchApplePodcasts(
 // -----------------------------------------------------------------------------
 
 async function fetchAndParseRSSFeed(feedUrl: string): Promise<RSSItem[]> {
-  const response = await fetch(feedUrl);
+  const response = await fetch(feedUrl, {
+    headers: {
+      "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+      "Accept": "application/xml, application/rss+xml, text/xml",
+    },
+  });
 
   if (!response.ok) {
     throw new Error(`Failed to fetch RSS feed: ${response.status}`);
